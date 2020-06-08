@@ -1,0 +1,92 @@
+<resources>
+    <string name="app_name">Perfecto Expense Tracker</string>
+    <string name="app_market_link">market://details?id=</string>
+    <string name="app_google_playstore_link">https://play.google.com/store/apps/details?id=</string>
+    <string name="some_error">Some Error Occurred!</string>
+    <string name="login">login</string>
+    <string name="login_caps">LOGIN</string>
+    <string name="expense_tracker">Expense Tracker</string>
+    <string name="Email">Email*</string>
+    <string name="register">Signup </string>
+    <string name="Password">Password*</string>
+    <string name="empty_password">Please provide a non empty password.</string>
+    <string name="logout">Logout</string>
+    <string name="cut">Cut</string>
+    <string name="version">Version</string>
+    <string name="open_drawer">Open Drawer</string>
+    <string name="close_drawer">Close Drawer</string>
+    <string name="about">About</string>
+    <string name="empty_screen">No expenses found.\nClick + to create</string>
+    <string name="please_retry">Please Retry</string>
+    <string name="retry">Retry</string>
+    <string name="error_sign_up">Some problem with sign up. Please try again later</string>
+    <string name="success_sign_up">Success. Please login</string>
+    <string name="no_internet">No Internet</string>
+    <string name="something_went_wrong">Something went wrong</string>
+    <string name="logging_you_out">Logging you out</string>
+    <string name="there_was_an_error_logout">Invalid email or password</string>
+    <string name="could_not_fetch_items">Could not fetch items</string>
+    <string name="could_not_show_items">Could not show items</string>
+    <string name="updated_items">Updated items</string>
+    <string name="showing_stale_items">Showing Stale Items</string>
+    <string name="signing_in">Signing In</string>
+    <string name="server_sign_in_failed">Server Sign in Failed</string>
+    <string name="cannnot_initiate_sign_in">Can not Initiate Sign in</string>
+    <string name="wrong_credentials">Invalid email or password</string>
+    <string name="empty_email">Please provide a non empty email.</string>
+    <string name="invalid_email">Please provide a valid email.</string>
+    <string name="txt_head">Head*</string>
+    <string name="txt_amount">Amount*</string>
+    <string name="attach_receipt">Attach receipt</string>
+    <string name="date">Date*</string>
+    <string name="category">Category*</string>
+    <string name="recurring">Recurring</string>
+    <string name="details">Details</string>
+    <string name="currency">Currency*</string>
+    <string name="add_expense">Add Expense</string>
+    <string name="save_expense">Save</string>
+    <string name="view_expense">View Expense</string>
+    <string name="edit_expense">Edit Expense</string>
+    <string name="user_name">User Name</string>
+    <string name="non_empty_user_name">Please provide non empty username</string>
+    <string name="delete_success">Deleted</string>
+    <string name="view">View</string>
+    <string name="remove">Remove</string>
+    <string name="crash_me">Crash Me</string>
+    <string name="edit">Edit</string>
+    <string name="update">Save</string>
+    <string name="Add">Add</string>
+    <string name="name">Name*</string>
+    <string name="select_currency">Select Currency</string>
+    <string name="confirm_password">Confirm Password*</string>
+    <string name="back">Back</string>
+    <string name="sign_up">Register</string>
+    <string name="non_empty_head">Please provide non empty head name</string>
+    <string name="non_empty_category">Please select a category</string>
+    <string name="non_empty_amount">Please enter valid amount</string>
+    <string name="max_expense">Amount should be less than 10,000</string>
+    <string name="non_empty_date">Please select date</string>
+    <string name="expense_added">Expense added</string>
+    <string name="expense_updated">Expense updated</string>
+    <string name="reset_fields">Reset</string>
+    <string name="default_amount">0.00</string>
+    <string name="expenses">Expenses</string>
+
+
+    <string name="delete">Delete</string>
+    <string name="fingerprint_success">Fingerprint Authentication Success</string>
+    <string name="fingerprint_failure">Fingerprint Authentication Failed</string>
+    <string name="biometric_title">Register</string>
+    <string name="biometric_subtitle">Set fingerprint print authentication</string>
+    <string name="biometric_description">Place your finger on the fingerprint sensor to Remember . Press cancel to deny</string>
+    <string name="biometric_negative_button_text">Cancel</string>
+
+    <string name="biometric_title_login">Login</string>
+    <string name="biometric_subtitle_login">Login using fingerprint</string>
+    <string name="biometric_description_login">Place your finger on the fingerprint print sensor to login as </string>
+    <string name="biometric_negative_button_text_login">Cancel</string>
+    <string name="attachments">Attachments</string>
+    <string name="title_activity_about">AboutActivity</string>
+    <string name="enable_biometric">Enable Biometric</string>
+
+</resources>

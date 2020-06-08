@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="currency">
+        <item>Select</item>
+        <item>INR-₹</item>
+        <item>USD-$</item>
+        <item>AUD-A$</item>
+        <item>SGD-S$</item>
+        <item>GBP-£</item>
+        <item>EUR-€</item>
+        <item>CNY-¥</item>
+        <item>YEN-¥</item>
+    </string-array>
+    <string-array name="category">
+        <item>Select</item>
+        <item>Personal</item>
+        <item>Business</item>
+        <item>Miscellaneous</item>
+    </string-array>
+    <string-array name="head">
+        <item>Select</item>
+        <item>Taxi</item>
+        <item>Flight</item>
+        <item>Meal</item>
+        <item>Shopping</item>
+    </string-array>
+</resources>

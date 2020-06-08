@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    android:clipChildren="false">
+
+    <LinearLayout
+        android:id="@+id/layout_activity"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="5dp">
+
+        <LinearLayout
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:layout_width="0px"
+            android:layout_height="0px"/>
+
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/Toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_gravity="top"
+            app:title="@string/app_name"
+            app:titleTextColor="@color/white" />
+    </com.google.android.material.appbar.AppBarLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/layout_buttons"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="20dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_marginEnd="20dp">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:id="@+id/add_head"
+                        android:focusable="true"
+                        android:clickable="true"
+                        android:focusedByDefault="true"
+                        android:focusableInTouchMode="true"
+                        />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/input_layout_head"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColorHint="@color/gray"
+                        app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:focusedByDefault="true"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/tie_expense_head"
+                            style="@style/TextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="invisible"
+                            android:layout_marginTop="30dp"
+                            android:background="@drawable/input_border_bottom"
+                            android:hint="@string/txt_head"
+                            android:inputType="text"
+                            android:focusedByDefault="true"
+                            android:paddingBottom="10dp"
+                            android:paddingTop="10dp"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/input_expense_amount"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColorHint="@color/gray"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/input_layout_head">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/add_amount"
+                            style="@style/TextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="30dp"
+                            android:background="@drawable/input_border_bottom"
+                            android:hint="@string/txt_amount"
+                            android:inputType="numberDecimal"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+
+                           />
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/amt_container"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/input_expense_amount"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginStart="5dp">
+
+                        <SeekBar
+                            android:id="@+id/amount_seek_bar"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="30dp"
+                            app:layout_constraintBottom_toTopOf="@+id/end_view"
+                            app:layout_constraintEnd_toEndOf="@+id/end_view"
+                            app:layout_constraintStart_toStartOf="@+id/start_view"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <View
+                            android:id="@+id/start_view"
+                            android:layout_width="1dp"
+                            android:layout_height="1dp"
+                            app:layout_constraintEnd_toEndOf="@+id/tv_start_amt"
+                            app:layout_constraintBottom_toTopOf="@+id/tv_start_amt"
+                            app:layout_constraintStart_toStartOf="@+id/tv_start_amt" />
+
+                        <TextView
+                            android:id="@+id/tv_start_amt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textAlignment="center"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="1dp"
+                            android:id="@+id/end_view"
+                            app:layout_constraintStart_toStartOf="@+id/tv_stop_amt"
+                            app:layout_constraintEnd_toEndOf="@+id/tv_stop_amt"
+                            app:layout_constraintBottom_toTopOf="@+id/tv_stop_amt"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/tv_stop_amt"
+                            android:text="10000"
+                            android:textAlignment="center"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/amt_container"
+                        android:id="@+id/signup_currency"
+                        android:focusable="true"
+                        android:clickable="true"
+                        android:focusedByDefault="true"
+                        android:focusableInTouchMode="true"
+                        />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/currency_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColorHint="@color/gray"
+                        app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/amt_container"
+                        >
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/tie_expense_spinner"
+                            style="@style/TextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="invisible"
+                            android:layout_marginTop="30dp"
+                            android:background="@drawable/input_border_bottom"
+                            android:hint="@string/currency"
+                            android:inputType="text"
+                            android:focusedByDefault="true"
+                            android:text="."
+                            android:paddingBottom="10dp"
+                            android:paddingTop="10dp"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!--<androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/currency_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/amt_container">
+
+                        <TextView
+                            android:id="@+id/tv_currency_head"
+                            style="@style/TextStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginBottom="20dp"
+                            android:text="@string/currency"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+
+                            />
+
+                        <androidx.appcompat.widget.AppCompatSpinner
+                            android:id="@+id/signup_currency"
+                            style="@style/TextStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="20dp"
+                            android:focusableInTouchMode="true"
+                            android:focusable="true"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layout_attachments"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/add_recurring_toggle">
+
+                        <TextView
+                            android:id="@+id/tv_attachments"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:text="@string/attachments"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageButton
+                            android:id="@+id/add_attach_btn"
+                            style="@style/Widget.MaterialComponents.Button.Icon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:contentDescription="@string/app_name"
+                            android:src="@drawable/ic_attachment"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_attachments"
+                            android:scaleType="fitCenter"
+                            android:paddingStart="5dp"
+                            android:paddingEnd="5dp"/>
+
+
+                        <Button
+                            android:id="@+id/view_view_attach_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/view"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_attachments"
+                            android:visibility="gone"/>
+                        <Button
+                            android:id="@+id/removeAttachment"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/remove"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/view_view_attach_btn"
+
+                           android:visibility="gone"/>
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tel_expense_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColorHint="@color/gray"
+                        app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/currency_layout">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/add_date"
+                            style="@style/TextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="30dp"
+                            android:background="@drawable/input_border_bottom"
+                            android:clickable="true"
+                            android:focusable="false"
+                            android:hint="@string/date"
+                            android:paddingBottom="10dp"
+                            android:paddingTop="10dp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tel_expense_date"
+                        android:id="@+id/spinner_category"
+                        android:focusable="false"
+                        android:clickable="false"
+                        />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/til_category"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColorHint="@color/gray"
+                        app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tel_expense_date">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/add_category"
+                            style="@style/TextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="30dp"
+                            android:visibility="invisible"
+                            android:background="@drawable/input_border_bottom"
+                            android:clickable="true"
+                            android:focusable="false"
+                            android:hint="@string/category"
+                            android:text=" "
+                            android:paddingBottom="10dp"
+                            android:paddingTop="10dp" />
+
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <app.perfecto.com.expencemanager.ui.custom.MultiSelectionSpinner
+                        android:id="@+id/mySpinner1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/til_category"
+                        android:visibility="gone"/>
+
+
+
+                    <Switch
+                        android:id="@+id/add_recurring_toggle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:text="@string/recurring"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/mySpinner1" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/id_multiline_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColorHint="@color/gray"
+                        app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/layout_attachments">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/add_details"
+                            style="@style/TextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:layout_marginTop="30dp"
+                            android:background="@drawable/input_border_bottom"
+                            android:hint="@string/details"
+                            android:inputType="textMultiLine"
+                            android:maxLines="10"
+                            android:minEms="10"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </ScrollView>
+            <LinearLayout
+                android:id="@+id/layout_buttons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/btn_reset_fields"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/reset_fields"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="5dp"
+                    android:visibility="gone"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    />
+                <Button
+                    android:id="@+id/add_save_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/save_expense"
+                    android:layout_weight="2"
+                    style="@style/Button.Primary"
+                    />
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </LinearLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

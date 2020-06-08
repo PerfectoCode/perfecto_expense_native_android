@@ -1,0 +1,32 @@
+package app.perfecto.com.expencemanager.utils.interactors;
+
+import androidx.annotation.Nullable;
+import androidx.lifecycle.LifecycleOwner;
+import androidx.lifecycle.Observer;
+
+
+
+public class ProgressDialogStatus extends SingleLiveEvent<Boolean> {
+
+    public void observe(LifecycleOwner owner, final ProgressDialogObserver observer) {
+        super.observe(owner, new Observer<Boolean>() {
+            @Override
+            public void onChanged(@Nullable Boolean s) {
+                if (s != null)
+                    return;
+
+                observer.onChanged(s);
+            }
+        });
+    }
+
+
+    public interface ProgressDialogObserver {
+        /**
+         * Called when Progress Dialog's state is changed.
+         * @param status The Progress Dialog's active state, non-null.
+         */
+
+        void onChanged(Boolean status);
+    }
+}

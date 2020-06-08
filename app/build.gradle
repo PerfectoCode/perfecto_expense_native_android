@@ -1,0 +1,120 @@
+apply plugin: 'com.android.application'
+apply plugin: 'io.fabric'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "io.perfecto.expense.tracker"
+        minSdkVersion 19
+        targetSdkVersion 28
+        versionCode 123
+        versionName "1.4 - beta"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
+}
+
+configurations.all {
+    resolutionStrategy.force "com.android.support:support-v7:$rootProject.supportLibraryVersion"
+}
+
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.1.0-alpha01'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.1.1'
+
+
+    implementation 'androidx.recyclerview:recyclerview:1.1.0-alpha01'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'com.google.android.material:material:1.1.0-alpha02'
+    implementation 'androidx.vectordrawable:vectordrawable:1.1.0-alpha01'
+    implementation 'androidx.vectordrawable:vectordrawable-animated:1.1.0-alpha01'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha2'
+
+    // network
+    implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$rootProject.retrofitVersion"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$rootProject.retrofit2Rxjava2AdapterVersion"
+    implementation "com.squareup.okhttp3:okhttp:$rootProject.okHttpVersion"
+    implementation "com.squareup.okhttp3:logging-interceptor:$rootProject.okHttpVersion"
+
+    // dependency injection
+//    compile "com.google.dagger:dagger:$rootProject.dagger2Version"
+//    annotationProcessor "com.google.dagger:dagger-compiler:$rootProject.dagger2Version"
+    implementation "com.google.dagger:dagger:$rootProject.dagger2Version"
+    annotationProcessor "com.google.dagger:dagger-compiler:$rootProject.dagger2Version"
+    annotationProcessor "com.google.dagger:dagger-android-processor:$rootProject.dagger2Version"
+    implementation "com.google.dagger:dagger-android-support:$rootProject.dagger2Version"
+
+    // code generator for view
+    implementation "com.jakewharton:butterknife:$rootProject.butterKnifeVersion"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.butterKnifeVersion"
+
+    // font
+    //compile "uk.co.chrisjenx:calligraphy:$rootProject.calligraphyVersion"
+
+    // parser
+    implementation "com.google.code.gson:gson:$rootProject.gsonVersion"
+
+    // debug database
+    debugImplementation "com.amitshekhar.android:debug-db:$rootProject.debugDBVersion"
+
+    // reactive
+    implementation "io.reactivex.rxjava2:rxjava:$rootProject.rxjava2Version"
+    implementation "io.reactivex.rxjava2:rxandroid:$rootProject.rxandroidVersion"
+
+    // logger
+    implementation "com.jakewharton.timber:timber:$rootProject.timberVersion"
+
+    // dependencies for local unit tests
+    testImplementation "junit:junit:$rootProject.ext.junitVersion"
+    testImplementation "org.mockito:mockito-core:$rootProject.mockitoVersion"
+    testAnnotationProcessor "com.google.dagger:dagger-compiler:$rootProject.dagger2Version"
+
+    // UI Testing
+
+    androidTestImplementation "org.mockito:mockito-core:$rootProject.mockitoVersion"
+    androidTestAnnotationProcessor "com.google.dagger:dagger-compiler:$rootProject.dagger2Version"
+
+    //Viewmodel
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.1.0-alpha01'
+    annotationProcessor 'androidx.lifecycle:lifecycle-compiler:2.1.0-alpha01'
+
+    //Room Database
+    implementation 'androidx.room:room-runtime:2.1.0-alpha03'
+    annotationProcessor 'androidx.room:room-compiler:2.1.0-alpha03'
+    androidTestImplementation 'androidx.room:room-testing:2.1.0-alpha03'
+
+
+    implementation 'com.weiwangcn.betterspinner:library-material:1.1.0'
+
+    implementation 'com.github.angads25:filepicker:1.1.1'
+
+    implementation 'com.google.firebase:firebase-core:16.0.6'
+
+    implementation 'com.crashlytics.sdk.android:crashlytics:2.9.7'
+
+    implementation 'io.github.inflationx:calligraphy3:3.0.0'
+    implementation 'io.github.inflationx:viewpump:1.0.0'
+
+    implementation 'com.google.android.material:material:1.0.0'
+
+    implementation 'in.gauriinfotech:commons:1.0.8'
+
+    implementation 'me.aflak.libraries:fingerprint:2.5.3'
+
+}
+
+
+apply plugin: 'com.google.gms.google-services'

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <TextView
+        android:id="@+id/tv_exp_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        style="@style/TextStyle.Head"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_exp_amount"
+        app:layout_constraintStart_toEndOf="@+id/cb_select_box" />
+
+    <TextView
+        android:id="@+id/tv_exp_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        style="@style/TextStyle.Head"
+        app:layout_constraintEnd_toStartOf="@+id/iv_view_btn"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_exp_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        style="@style/TextStyle.Additional"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_exp_currency"
+        app:layout_constraintStart_toEndOf="@+id/cb_select_box" />
+
+    <TextView
+        android:id="@+id/tv_exp_currency"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        style="@style/TextStyle.Additional"
+        app:layout_constraintEnd_toStartOf="@+id/iv_view_btn"
+        app:layout_constraintTop_toBottomOf="@+id/tv_exp_amount" />
+
+    <CheckBox
+        android:id="@+id/cb_select_box"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"/>
+
+    <ImageView
+        android:id="@+id/iv_view_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_refresh" />
+</androidx.constraintlayout.widget.ConstraintLayout>
